@@ -1,0 +1,33 @@
+{% extends 'aindx.html' %}
+{% block cnt %}
+<div class="card-block table-border-style">
+    <div class="table-responsive">
+        <center><h4>Authority Requests</h4></center>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Mail</th>
+                    <th>Proof</th>
+                    <th>Password</th>
+                    <th>Approve</th>
+                    <th>Decline</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in inf %}
+                <tr class="bg-info">
+                    <!--<th scope="row"></th>-->
+                    <td>{{i.atname}}</td>
+                    <td>{{i.atmail}}</td>
+                    <td><img src={{i.atprf.url}} height='60px' width="auto"></td>
+                    <td>{{i.atpsw}}</td>
+                    <td><a href="{% url 'atapr' i.id %}"><button class="btn btn-primary">Approve</button></a></td>
+                    <td><a href="{% url 'atdec' i.id %}"><button class="btn btn-primary">Decline</button></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

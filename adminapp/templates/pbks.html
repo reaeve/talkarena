@@ -1,0 +1,33 @@
+{% extends 'aindx.html' %}
+{% block cnt %}
+<div class="card-block table-border-style">
+    <div class="table-responsive">
+        <center><h4>User Bookings for Psychologist</h4></center>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Mail</th>
+                    <th>Number</th>
+                    <th>Subject</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in inf %}
+                <tr class="bg-info">
+                    <!--<th scope="row"></th>-->
+                    <td>{{i.uid.uname}}</td>
+                    <td>{{i.uid.umail}}</td>
+                    <td>{{i.num}}</td>
+                    <td>{{i.sub}}</td>
+                    <td>{{i.dte}}</td>
+                    <td>{{i.tme}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'uindx.html' %}
+{% block cnt %}
+<div id="pricing" class="pricing-tables">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            {% for i in p %}
+            <h4>Psychologist : <em>{{i.pname}}</em></h4>
+            {% endfor %}
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p><p>If you need any support from Psychologists for your situation, please visit our Psychologists page. If you need to have a contact form Psychologists, go to our contact page for more information.</p>
+          </div>
+        </div>
+        {% for i in p %}
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <!--<span class="price">$12</span>-->
+            <h4>{{i.pname}}</h4>
+            <div class="icon">
+              <img src="{{i.pprf.url}}" alt="">
+            </div>
+            <ul>
+              <li>{{i.pqual}}</li>
+              <li>{{i.pexp}}</li>
+              <li>{{i.pgen}}</li>
+              <li>{{i.pmail}}</li>
+            </ul>
+            <div class="border-button">
+              <a href="{% url 'papnt' i.id %}">Make an Appointment</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+</div>
+{% endblock %}

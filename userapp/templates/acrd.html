@@ -1,0 +1,30 @@
+{% extends 'uindx.html' %}
+{% block cnt %}
+<div id="pricing" class="pricing-tables">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Authority <em>Services &amp; Features</em> For You</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>If you need any support from authorities for your situation, please visit our Authorities page. If you need to have a contact form Authorities, go to our contact page for more information.</p>
+          </div>
+        </div>
+        {% for i in a %}
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <!--<span class="price">$12</span>-->
+            <h4>{{i.atname}}</h4>
+            <div class="icon">
+              <img src="{{i.atprf.url}}" alt="">
+            </div>
+            <div class="border-button">
+              <a href="{% url 'asng' i.id %}">View more info</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+</div>
+{% endblock %}

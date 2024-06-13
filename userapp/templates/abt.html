@@ -1,0 +1,78 @@
+{% extends 'uindx.html' %}
+{% block cnt %}
+<div id="about" class="about-us section">
+    <div class="container" style="margin-left: 400px;">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <center><h4 style="margin-left:50px;">About <em>What We Do</em> &amp; Who We Are</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>We are dedicated to addressing bullying and providing support for those who are experiencing it. These platforms often offer resources, advice, and a safe space for individuals to share their experiences and seek help.</p></center>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Authorities</a></h4>
+                <p>View detailed information</p>
+                    {% if 'u_id' in request.session %}
+                    <div class="text-button">
+                        <a href="{% url 'acrd' %}">Read More </a>
+                    </div>
+                    {% else  %}
+                    <div class="text-button">
+                      <button style="background-color: white; border: none; color:blue;"  onclick="pufn()">Read more</button>
+                    </div>
+                    {% endif %}
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Psychologists</a></h4>
+                <p>View detailed information</p>
+                    {% if 'u_id' in request.session %}
+                    <div class="text-button">
+                        <a href="{% url 'pcrd' %}">Read More </a>
+                    </div>
+                    {% else  %}
+                    <div class="text-button">
+                      <button style="background-color: white; border: none; color:blue;"  onclick="pufn()">Read more</button>
+                    </div>
+                    {% endif %}
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Comfort Zone</a></h4>
+                <p>View detailed information</p>
+                    {% if 'u_id' in request.session %}
+                    <div class="text-button">
+                        <a href="#">Read More </a>
+                    </div>
+                    {% else %}
+                    <div class="text-button">
+                      <button style="background-color: white; border: none; color:blue;"  onclick="pufn()">Read more</button>
+                    </div>
+                    {% endif %}
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">24/7 Support &amp; Help</a></h4>
+                <p>View detailed information</p>
+                    {% if 'u_id' in request.session %}
+                    <div class="text-button">
+                        <a href="#">Read More </a>
+                    </div>
+                    {% else %}
+                    <div class="text-button">
+                      <button style="background-color: white; border: none; color:blue;"  onclick="pufn()">Read more</button>
+                    </div>
+                    {% endif  %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

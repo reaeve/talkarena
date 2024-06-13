@@ -1,0 +1,62 @@
+{% extends 'psyindx.html' %}
+{% block pcnt %}
+<!--<div class="card-block table-border-style">
+    <div class="table-responsive">
+        <table class="table table-inverse">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in p %}
+                <tr class="bg-info">
+                    <td>{{i.pname}}</td>
+                    <td>{{i.pmail}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>-->
+{% for i in p %}
+<center>
+<div class="col-xl-6 col-md-6" style="margin-top: 50px;">
+    <div class="card">
+        <div class="card-block">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <h4 class="text-c-purple">{{i.pname}}</h4>
+                    <h6 class="text-muted m-b-0">{{i.pmail}}</h6>
+                </div>
+                <div class="col-4 text-right">
+                    <!--<i class="fa fa-bar-chart f-28"></i>-->
+                </div>
+            </div>
+        </div>
+        <div class="card-footer bg-c-purple">
+            <div class="row align-items-center">
+                {% if i.status == 1 %}
+                <div class="col-12">
+                    <p class="text-white m-b-0">Request Accepted</p>
+                </div>
+                {% elif i.status == 2 %}
+                <div class="col-12">
+                    <p class="text-white m-b-0">Request Denied</p>
+                </div>
+                {% else %}
+                <div class="col-12">
+                    <p class="text-white m-b-0">Request waiting</p>
+                </div>
+                {% endif %}
+                <div class="col-3 text-right">
+                    <!--<i class="fa fa-line-chart text-white f-16"></i>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</center>
+{% endfor %}
+{% endblock %}
