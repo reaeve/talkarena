@@ -226,3 +226,7 @@ def ureps(request,id):
 def ureperr(request):
     return render(request,'ureperr.html',{'msg':'Contains bullywords cannot post your reply!'})
 
+def ex(request):
+    print("github")
+    return 
+    
