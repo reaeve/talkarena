@@ -1,12 +1,14 @@
 {% extends 'uindx.html' %}
+{% load static %}
 {% block cnt %}
 <div id="about" class="about-us section">
     <div class="container">
       <div class="row">
+        <center>
         <div class="col-lg-6">
           <div class="section-heading">
             <center><h4 style="margin-left:50px;">About <em>What We Do</em> &amp; Who We Are</h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
+            <img src="{% static 'assets/images/heading-line-dec.png' %}" alt="">
             <p>We are dedicated to addressing bullying and providing support for those who are experiencing it. These platforms often offer resources, advice, and a safe space for individuals to share their experiences and seek help.</p></center>
           </div>
           <div class="row">
@@ -72,6 +74,7 @@
             </div>
           </div>
         </div>
+      </center>
       </div>
     </div>
 </div>
